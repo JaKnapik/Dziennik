@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('dziennik', 'DziennikController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
