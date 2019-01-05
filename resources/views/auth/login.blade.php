@@ -10,22 +10,22 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Pesel</label>
+                        <div class="form-group{{ $errors->has('pesel') ? ' has-error' : '' }}">
+                            <label for="pesel" class="col-md-4 control-label">PESEL</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="pesel" type="text" class="form-control" name="pesel" value="{{ old('pesel') }}" required autofocus>
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('pesel'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('pesel') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Hasło</label>
+                            <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
@@ -42,7 +42,7 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}> Zapamiętaj
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}> Remember Me
                                     </label>
                                 </div>
                             </div>
@@ -51,12 +51,12 @@
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Zaloguj
+                                    Login
                                 </button>
 
-                                {{--<a class="btn btn-link" href="{{ url('/password/reset') }}">--}}
-                                    {{--Forgot Your Password?--}}
-                                {{--</a>--}}
+                                <a class="btn btn-link" href="{{ url('/password/reset') }}">
+                                    Forgot Your Password?
+                                </a>
                             </div>
                         </div>
                     </form>

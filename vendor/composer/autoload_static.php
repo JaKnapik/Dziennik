@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit5e61e5447c729cf0bb3015c862a15768
+class ComposerStaticInitb111e9ccbdfc686e0d51f30faabbf533
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -284,13 +284,14 @@ class ComposerStaticInit5e61e5447c729cf0bb3015c862a15768
     );
 
     public static $classMap = array (
+        'AlterUsers' => __DIR__ . '/../..' . '/database/migrations/2019_01_05_201239_alterUsers.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
-        'Dziennik' => __DIR__ . '/../..' . '/database/migrations/2019_01_02_220236_dziennik.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'Grades' => __DIR__ . '/../..' . '/database/migrations/2019_01_05_203618_grades.php',
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
         'Hamcrest\\Arrays\\IsArrayContaining' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
         'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',
@@ -359,7 +360,7 @@ class ComposerStaticInit5e61e5447c729cf0bb3015c862a15768
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
-        'Oddzial' => __DIR__ . '/../..' . '/database/migrations/2019_01_02_221901_Oddzial.php',
+        'Messages' => __DIR__ . '/../..' . '/database/migrations/2019_01_05_203920_messages.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/AssertionFailedError.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
@@ -821,18 +822,20 @@ class ComposerStaticInit5e61e5447c729cf0bb3015c862a15768
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'Sections' => __DIR__ . '/../..' . '/database/migrations/2019_01_05_202430_sections.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'UserSeeder' => __DIR__ . '/../..' . '/database/seeds/UserSeeder.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit5e61e5447c729cf0bb3015c862a15768::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit5e61e5447c729cf0bb3015c862a15768::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit5e61e5447c729cf0bb3015c862a15768::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit5e61e5447c729cf0bb3015c862a15768::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit5e61e5447c729cf0bb3015c862a15768::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitb111e9ccbdfc686e0d51f30faabbf533::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitb111e9ccbdfc686e0d51f30faabbf533::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInitb111e9ccbdfc686e0d51f30faabbf533::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitb111e9ccbdfc686e0d51f30faabbf533::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitb111e9ccbdfc686e0d51f30faabbf533::$classMap;
 
         }, null, ClassLoader::class);
     }
