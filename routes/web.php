@@ -18,3 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::resource('dziennik', 'DziennikController');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
