@@ -20,10 +20,10 @@
         ]); ?>
     </script>
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+<body style="background-color: rgb(46, 56, 66);">
+    <div id="app" style="background-color: rgb(46, 56, 66);">
+        <nav class="navbar navbar-default navbar-static-top"style="background-color: rgb(46, 56, 66);">
+            <div class="container" >
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -35,8 +35,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a class="navbar-brand" href="{{ url('dziennik') }}">
+                        {{ config('dziennik', 'Dziennik') }}
                     </a>
                 </div>
 
@@ -51,7 +51,7 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
-                            <li><a href="{{ url('/register') }}">Register</a></li>
+                            {{--<li><a href="{{ url('/register') }}">Register</a></li>--}}
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
