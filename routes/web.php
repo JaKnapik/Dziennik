@@ -11,12 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-Route::resource('dziennik', 'DziennikController');
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('/', [
+    'uses' => 'DziennikController@index',
+    'as' => 'dziennik.index'
+]);
+//Route::get('/students', 'StudentsController@index');
+
+Route::get('students', [
+    'uses' => 'StudentsController@index',
+    'as' => 'students.index'
+]);
+//Route::resource('dziennik', 'DziennikController');
+//Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+
+Route::get('logout', [
+   'uses' => 'LoginController@logout',
+   'as' => 'login.logout'
+]);
