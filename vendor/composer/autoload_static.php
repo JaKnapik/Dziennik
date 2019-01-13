@@ -319,6 +319,7 @@ class ComposerStaticInitb111e9ccbdfc686e0d51f30faabbf533
     );
 
     public static $classMap = array (
+        'AddForUserToGrades' => __DIR__ . '/../..' . '/database/migrations/2019_01_13_142221_add_forUser_to_grades.php',
         'AlterUsers' => __DIR__ . '/../..' . '/database/migrations/2019_01_05_201239_alterUsers.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
