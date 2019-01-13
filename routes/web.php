@@ -14,7 +14,7 @@
 
 Auth::routes();
 
-Route::get('/', [
+Route::get('/dziennik', [
     'uses' => 'DziennikController@index',
     'as' => 'dziennik.index'
 ]);

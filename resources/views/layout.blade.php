@@ -26,8 +26,12 @@
 									<a href="#menu" class="menuToggle"><span>@if(Auth::guest()==false){{ Auth::user()->name." ".Auth::user()->surname }}@endif Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="{{route('students.index')}}">REJESTRACJA ORAZ EDYCJA</a></li>
-											<li><a href="generic.html">Generic</a></li>
+											@if(Auth::guest()==false)
+												@if(Auth::user()->role == 'admin')
+													<li><a href="#">ZAREJESTRUJ UCZNIA</a></li>
+												@endif
+											@endif
+											<li><a href="{{route('students.index')}}">LISTA UCZNIÓW</a></li>
 											<li><a href="elements.html">Elements</a></li>
 											<li>@if(Auth::guest()==false)
 												<a href="{{ route('login.logout') }}"
@@ -39,6 +43,9 @@
 												<form id="logout-form" action="{{ route('login.logout') }}" method="POST" style="display: none;">
 													{{ csrf_field() }}
 												</form>
+												@endif
+												@if(Auth::guest()==true)
+													<a href="login">Zaloguj</a>
 												@endif
 											</li>
 										</ul>
