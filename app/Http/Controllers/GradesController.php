@@ -16,10 +16,8 @@ class GradesController extends Controller
      */
     public function index($id)
     {
-
         $grades = Grades::join('users', 'users.id', '=', 'grades.studentID')
-            ->select('grades.*')->where('users.id', $id)->paginate(10);
-
+            ->select('grades.*')->where('users.id', $id)->paginate(1);
         return view('grades.gradesList', compact('grades'));
     }
 //

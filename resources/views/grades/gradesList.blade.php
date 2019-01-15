@@ -5,7 +5,7 @@
     <label style="text-underline: black"><h1>Lista ocen</h1></label>
 </div>
 <div style="padding: 5em">
-<table class="table table-hover">
+<table class="table">
     <thead>
         <tr>
             <th>Ocena</th>

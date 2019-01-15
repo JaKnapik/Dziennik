@@ -5,7 +5,7 @@
     <label style="text-underline: black"><h1>Lista uczniów</h1></label>
 </div>
 <div style="padding: 5em">
-<table class="table table-hover">
+<table class="table">
     <thead>
         <tr>
             <th>Imię</th>
@@ -32,7 +32,7 @@
         @endforeach
     </tbody>
 </table>
-</div>
 
-    {{$students->links()}}
+    {!! $students->links() !!}
+</div>
 @endsection
