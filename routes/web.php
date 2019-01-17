@@ -32,3 +32,15 @@ Route::get('logout', [
    'uses' => 'LoginController@logout',
    'as' => 'login.logout'
 ]);
+
+Route::get('createStudent', [
+    'uses' => 'StudentsController@create',
+    'as' => 'student.create'
+]);
+
+Route::post('storeStudent', [
+    'uses' => 'StudentsController@store',
+    'as' => 'student.store'
+]);
+
+
