@@ -26,7 +26,7 @@
             <td>
                 <a class="button" href="#">Edytuj</a>
                 <a class="button" href="#">Usuń</a>
-                <a class="button" href="#">Oceny/Wiadomości</a>
+                <a class="button" href="#">Oceny</a>
             </td>
         </tr>
         @endforeach

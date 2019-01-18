@@ -19,6 +19,15 @@ Route::get('/dziennik', [
     'as' => 'dziennik.index'
 ]);
 //Route::get('/students', 'StudentsController@index');
+Route::get('messagesReceived{id}', [
+    'uses' => 'MessagesController@showReceived',
+    'as' => 'messages.showReceived'
+]);
+Route::get('messagesSent{id}', [
+    'uses' => 'MessagesController@showSent',
+    'as' => 'messages.showSent'
+
+]);
 
 Route::get('students', [
     'uses' => 'StudentsController@index',
