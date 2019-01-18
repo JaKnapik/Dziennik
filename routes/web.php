@@ -43,4 +43,17 @@ Route::post('storeStudent', [
     'as' => 'student.store'
 ]);
 
+Route::get('deleteStudent{student}', [
+    'uses' => 'StudentsController@destroy',
+    'as' => 'student.destroy'
+]);
 
+Route::get('editStudent{student}', [
+    'uses' => 'StudentsController@edit',
+    'as' => 'student.edit'
+]);
+
+Route::put('student{student}', [
+    'uses' => 'StudentsController@update',
+    'as' => 'student.update'
+]);

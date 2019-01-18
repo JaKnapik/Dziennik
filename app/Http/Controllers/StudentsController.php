@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StudentsRequest;
 use App\Section;
 use App\User;
+use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Expr\Array_;
 
 class StudentsController extends Controller
@@ -69,12 +70,13 @@ class StudentsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\User $student
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $student)
     {
-        //
+        $sections = Section::all();
+        return view('students.edit', compact(['student', 'sections']));
     }
 
     /**
@@ -84,23 +86,34 @@ class StudentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StudentsRequest $request, User $student)
     {
-        //
+
+
+        DB::table('users')->where('id',$student->id)->update([
+            'name' => $request->input('name'),
+            'surname' => $request->input('surname'),
+            'pesel' => $request->input('pesel'),
+            'sectionID' => $request->input('section'),
+            'editorID' => $request->input('edytor'),
+            'updated_at' => date('Y-m-d H:i:s', time())
+    ]);
+        return redirect()->route('students.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  User  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $student)
     {
-        //
+        User::where('id', $student->id)->delete();
+        return redirect()->route('students.index');
     }
 
-    function generateRandomString($length = 16) {
+    private function generateRandomString($length = 16) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
