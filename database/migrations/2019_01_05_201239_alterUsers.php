@@ -20,7 +20,7 @@ class AlterUsers extends Migration
             $table->string('role');
             $table->integer('editorID');
             $table->integer('sectionID')->nullable();
-            $table->boolean('temp');
+            $table->string('temp');
         });
     }
 
