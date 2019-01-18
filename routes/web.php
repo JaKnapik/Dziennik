@@ -26,11 +26,14 @@ Route::get('students', [
 ]);
 //Route::resource('dziennik', 'DziennikController');
 //Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-Route::get('grades{id}', [
-   'uses' => 'GradesController@index',
-   'as' => 'grades.index'
+Route::get('gradesShow{id}', [
+   'uses' => 'GradesController@show',
+   'as' => 'grades.show'
 ]);
-
+Route::get('gradesStore', [
+   'uses'=> 'GradesController@store',
+   'as' => 'grades.store'
+]);
 Route::get('logout', [
    'uses' => 'LoginController@logout',
    'as' => 'login.logout'

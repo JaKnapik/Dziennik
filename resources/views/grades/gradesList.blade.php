@@ -30,7 +30,7 @@
         </tr>
         @endforeach
     </tbody>
-    <a class="button" href="#">Dodaj ocenę</a>
+    <a class="button" href="{{route('grades.store')}}">Dodaj ocenę</a>
 </table>
 </div>
 

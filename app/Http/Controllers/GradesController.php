@@ -16,41 +16,41 @@ class GradesController extends Controller
      */
     public function index($id)
     {
-        $grades = Grades::join('users', 'users.id', '=', 'grades.studentID')
-            ->select('grades.*')->where('users.id', $id)->paginate(1);
-        return view('grades.gradesList', compact('grades'));
+
     }
 //
 //    /**
 //     * Show the form for creating a new resource.
-//     *
+//     * @param User $id
 //     * @return \Illuminate\Http\Response
 //     */
-//    public function create()
+//    public function create($id)
 //    {
-//        //
 //    }
-//
-//    /**
-//     * Store a newly created resource in storage.
-//     *
-//     * @param  \Illuminate\Http\Request  $request
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function store(Request $request)
-//    {
-//        //
-//    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  User $id
+     * @return \Illuminate\Http\Response
+     */
+    public function store($id)
+    {
+
+        return view('grades.gradesStore', compact('gstore'));
+    }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  User  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-
+        $grades = Grades::join('users', 'users.id', '=', 'grades.studentID')
+            ->select('grades.*')->where('users.id', $id)->paginate(1);
+        return view('grades.gradesList', compact('grades'));
     }
 //
 //    /**
