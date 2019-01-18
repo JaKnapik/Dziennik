@@ -29,10 +29,10 @@
 										<ul>
 											@if(Auth::guest()==false)
 												@if(Auth::user()->role == 'admin')
-													<li><a href="#">ZAREJESTRUJ UCZNIA</a></li>
+													<li><a href="{{ route('student.create') }}">ZAREJESTRUJ UCZNIA</a></li>
+													<li><a href="{{route('students.index')}}">LISTA UCZNIÓW</a></li>
 												@endif
 											@endif
-											<li><a href="{{route('students.index')}}">LISTA UCZNIÓW</a></li>
 											<li><a href="elements.html">Elements</a></li>
 											<li>@if(Auth::guest()==false)
 												<a href="{{ route('login.logout') }}"
@@ -46,7 +46,7 @@
 												</form>
 												@endif
 												@if(Auth::guest()==true)
-													<a href="login">Zaloguj</a>
+													<a href="{{ url('/login') }}">Zaloguj</a>
 												@endif
 											</li>
 										</ul>

@@ -5,7 +5,7 @@
     <label style="text-underline: black"><h1>Lista uczniów</h1></label>
 </div>
 <div style="padding: 5em">
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr>
             <th>Imię</th>
@@ -24,15 +24,14 @@
             <th>{{$student->class}}</th>
             <th>{{$student->sectionName}}</th>
             <td>
-                <a class="button" href="#">Edytuj</a>
-                <a class="button" href="#">Usuń</a>
-                <a class="button" href="{{route('grades.show', $student->id)}}">Oceny/Wiadomości</a>
+                <a class="button" href="{{ route('student.edit', $student) }}">Edytuj</a>
+                <a class="button" href="{{route('student.destroy', $student)}}" onclick="return confirm('Are you sure?')">Usuń</a>
             </td>
         </tr>
         @endforeach
     </tbody>
 </table>
-
-    {!! $students->links() !!}
 </div>
+
+    {{$students->links()}}
 @endsection
