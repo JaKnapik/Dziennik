@@ -7,8 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Rejestracja</div>
                 <div class="panel-body">
-                    {{!! Form:open(route('student.store')) !!}};
-
+                    {!! Form::open(route('student.store')) !!};
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 

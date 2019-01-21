@@ -25,12 +25,13 @@
             <th>{{$grade->editedBy}}</th>
             <th>{{$grade->created_at}}</th>
             <th>{{$grade->edited_at}}</th>
-            <td><a class="button" href="#">Edytuj</a>
-            <a class="button" href="#">Usuń</a></td>
+            <td><a class="button" href="{{route('grades.edit', $grade->gradeID)}}">Edytuj</a></td>
+            <td><a class="button" href="{{route('grades.destroy', $grade->gradeID)}}" onclick="return confirm('Czy jesteś pewien?')">Usuń</a></td>
         </tr>
         @endforeach
     </tbody>
-    <a class="button" href="{{route('grades.store')}}">Dodaj ocenę</a>
+    <a class="button" href="{{route('students.index')}}">Lista uczniów</a>
+        <a class="button" href="{{route('grades.index', $grade->studentID)}}">Dodaj ocenę</a>
 </table>
 </div>
 

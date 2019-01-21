@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Grades;
+use App\Http\Requests\GradesRequest;
 use App\Students;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Support\Facades\DB;
 class GradesController extends Controller
 {
     /**
@@ -14,9 +16,15 @@ class GradesController extends Controller
      * @param User $id
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function __construct()
     {
-
+        $this->middleware('auth', ['except' => 'logout']);
+    }
+    public function index($nameSurname)
+    {
+        $nameSurname = Grades::join('users', 'users.id', '=', 'grades.studentID')
+            ->select('users.name', 'users.surname', 'grades.studentID')->where('grades.studentID', $nameSurname)->get();
+    return view('grades.gradesStore', compact('nameSurname'));
     }
 //
 //    /**
@@ -31,13 +39,20 @@ class GradesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  User $id
+     * @param  GradesRequest $grades
      * @return \Illuminate\Http\Response
      */
-    public function store($id)
+    public function store(GradesRequest $grades)
     {
-
-        return view('grades.gradesStore', compact('gstore'));
+        Grades::insert([
+            'grade' => $grades->input('grade'),
+            'description' => $grades->input('description'),
+            'addedBy' => $grades->input('addedBy'),
+            'editedBy' => $grades->input('editedBy'),
+            'created_at' => date('Y-m-d H:i:s', time()),
+            'studentID' => $grades->input('studentID')
+        ]);
+         return back();
     }
 
     /**
@@ -53,37 +68,46 @@ class GradesController extends Controller
         return view('grades.gradesList', compact('grades'));
     }
 //
-//    /**
-//     * Show the form for editing the specified resource.
-//     *
-//     * @param  int  $id
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function edit($id)
-//    {
-//        //
-//    }
-//
-//    /**
-//     * Update the specified resource in storage.
-//     *
-//     * @param  \Illuminate\Http\Request  $request
-//     * @param  int  $id
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function update(Request $request, $id)
-//    {
-//        //
-//    }
-//
-//    /**
-//     * Remove the specified resource from storage.
-//     *
-//     * @param  int  $id
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function destroy($id)
-//    {
-//        //
-//    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  $grade
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($grade)
+    {
+        $select= Grades::select('grade','description', 'gradeID')->where('gradeID', $grade)->get();
+       return view('grades.gradesEdit', compact('grade', 'select'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  $grade
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(GradesRequest $request, $grade)
+    {
+        DB::table('grades')->where('gradeID',$grade)->update([
+            'grade' => $request->input('grade'),
+            'description' => $request->input('description'),
+            'editedBy' => $request->input('editedBy'),
+            'updated_at' => date('Y-m-d H:i:s', time()),
+        ]);
+        return redirect()->route('students.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  Grades $grade
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($grade)
+    {
+
+        Grades::where('gradeID', $grade)->delete();
+        return redirect()->route('students.index');
+    }
 }
