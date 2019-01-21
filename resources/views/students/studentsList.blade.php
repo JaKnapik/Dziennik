@@ -2,7 +2,7 @@
 
 @section('content')
 <div style="margin: 3em 0 0 3em">
-    <label style="text-underline: black"><h1>Lista uczniów</h1></label>
+    <label style="text-underline: black"><h1>Lista uczniów </h1></label>
 </div>
 <div style="padding: 5em">
 <table class="table table-hover">
@@ -26,6 +26,7 @@
             <td>
                 <a class="button" href="{{ route('student.edit', $student) }}">Edytuj</a>
                 <a class="button" href="{{route('student.destroy', $student)}}" onclick="return confirm('Are you sure?')">Usuń</a>
+                <a class="button" href="{{route('messages.create', $student)}}">Wiadomość</a>
             </td>
         </tr>
         @endforeach

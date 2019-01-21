@@ -1,7 +1,6 @@
 @extends('layout')
 
 @section('content')
-
     <div style="margin: 3em 0 0 3em">
         <label style="text-underline: black"><h1>Odebrane wiadomości</h1></label>
     </div>

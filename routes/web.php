@@ -29,9 +29,57 @@ Route::get('messagesSent{id}', [
 
 ]);
 
+Route::get('sendMessage{nameSurname}', [
+    'uses' => 'MessagesController@create',
+    'as' => 'messages.create'
+
+]);
+
+Route::post('sendMessage{nameSurname}', [
+    'uses' => 'MessagesController@store',
+    'as' => 'messages.store'
+
+]);
+
+Route::get('messageToMany', [
+    'uses' => 'MessagesController@index',
+    'as' => 'messages.toMany'
+
+]);
+Route::post('resetSelected', [
+    'uses' => 'MessagesController@resetSelect',
+    'as' => 'messages.reset'
+
+]);
+
+Route::post('sendToMany', [
+    'uses' => 'MessagesController@sendToMany',
+    'as' => 'messages.sendToMany'
+
+]);
+
+Route::post('deleteFromList', [
+    'uses' => 'MessagesController@deleteFromList',
+    'as' => 'messages.deleteFromList'
+
+]);
+Route::post('storeToMany', [
+    'uses' => 'MessagesController@storeToMany',
+    'as' => 'messages.storeToMany'
+
+]);
+
+
+Route::post('searchToSend','MessagesController@search');
+
+
 Route::get('students', [
     'uses' => 'StudentsController@index',
     'as' => 'students.index'
+]);
+Route::get('paski', [
+    'uses' => 'PaskiController@index',
+    'as' => 'paski.index'
 ]);
 //Route::resource('dziennik', 'DziennikController');
 //Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

@@ -36,6 +36,8 @@
 											@if(Auth::guest()==false)
 													<li><a href="{{route("messages.showSent", Auth::user()->id)}}">Wiadomości wysłane</a></li>
 													<li><a href="{{route("messages.showReceived", Auth::user()->id)}}">Wiadomości odebrane</a></li>
+													<li><a href="{{route("messages.toMany")}}">Wyślij do wielu</a></li>
+                                                    <li><a href="{{route("paski.index")}}">Paski do druku</a></li>
 												<li><a href="{{ route('login.logout') }}"
 												   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -85,6 +87,8 @@
 			<script src="js/breakpoints.min.js"></script>
 			<script src="js/util.js"></script>
 			<script src="js/main.js"></script>
+			<script src="js/lista2.js"></script>
+
 
 	</body>
 </html>

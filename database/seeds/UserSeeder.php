@@ -23,13 +23,13 @@ class UserSeeder extends Seeder
 //        ]);
 
         DB::table('users')->insert([
-            'name' => 'Patryk',
+            'name' => 'Sławosz2',
             //'email' => 'maciejkna470@gmail.com',
-            'password' => bcrypt('admin'),
-            'surname' => 'Gucik',
-            'pesel' => '97030708413',
+            'password' => bcrypt('user'),
+            'surname' => 'Gała2',
+            'pesel' => '99999999998',
             'editorID' => 1,
-            'role' => 'admin',
+            'role' => 'user',
             'temp' => 0,
         ]);
     }
