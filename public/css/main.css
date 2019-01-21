@@ -3976,3 +3976,17 @@ input, select, textarea {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+.column {
+	margin-top: 1%;
+	float: left;
+	width: 50%;
+	align-items: center;
+	text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
