@@ -28,7 +28,7 @@
 										<ul>
 											@if(Auth::guest()==false)
 												@if(Auth::user()->role == 'admin')
-													<li><a href="#">ZAREJESTRUJ UCZNIA</a></li>
+													<li><a href="{{ route('student.create') }}">ZAREJESTRUJ UCZNIA</a></li>
 													<li><a href="{{route('students.index')}}">LISTA UCZNIÓW</a></li>
 												@endif
 											@endif
@@ -48,7 +48,7 @@
 												</li>
 												@endif
 												@if(Auth::guest()==true)
-													<li><a href="login">Zaloguj</a></li>
+													<li><a href="{{ url('/login') }}">Zaloguj</a></li>
 												@endif
 										</ul>
 									</div>

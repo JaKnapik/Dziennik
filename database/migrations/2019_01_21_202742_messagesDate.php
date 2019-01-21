@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterUsers extends Migration
+class MessagesDate extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class AlterUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function(Blueprint $table)
+        Schema::table('messages', function(Blueprint $table)
         {
-            $table->string('pesel')->unique();
-            $table->string('surname')->after('name');
-            $table->string('role');
-            $table->integer('editorID');
-            $table->integer('sectionID')->nullable();
-            $table->string('temp');
+            $table->date('addTime');
         });
     }
 
