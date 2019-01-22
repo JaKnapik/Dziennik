@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StudentsRequest;
+use App\Http\Requests\PassRequest;
 use App\Section;
 use App\User;
 use Illuminate\Support\Facades\DB;
@@ -83,10 +84,24 @@ class StudentsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request  $requesty
+     * @param  $id
      * @return \Illuminate\Http\Response
      */
+    public function passEdit($id)
+    {
+
+        return view('students.changePass', compact('id'));
+    }
+    public function passUpdate(PassRequest $requesty, $id)
+    {
+        DB::table('users')->where('id', $id)->update([
+            'password' => bcrypt($requesty->input('password')),
+            'editorID' => $requesty->input('editorID'),
+            'updated_at' => date('Y-m-d H:i:s', time())
+            ]);
+        return redirect()->route('dziennik.index');
+    }
     public function update(StudentsRequest $request, User $student)
     {
 

@@ -68,6 +68,12 @@ class GradesController extends Controller
         $iducznia = $id;
         return view('grades.gradesList', compact('grades'), compact('iducznia'));
     }
+    public function showUser($id)
+    {
+        $grades = Grades::join('users', 'users.id', '=', 'grades.studentID')
+            ->select('grades.*')->where('users.id', $id)->paginate(1);
+        return view('grades.userList', compact('grades'));
+    }
 //
     /**
      * Show the form for editing the specified resource.

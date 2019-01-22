@@ -87,6 +87,10 @@ Route::get('gradesShow{id}', [
    'uses' => 'GradesController@show',
    'as' => 'grades.show'
 ]);
+Route::get('userGrades{id}', [
+    'uses' => 'GradesController@showUser',
+    'as'=> 'grades.showUser'
+]);
 Route::get('gradesIndex{nameSurname}', [
     'uses' => 'GradesController@index',
     'as' => 'grades.index'
@@ -127,6 +131,14 @@ Route::get('editStudent{student}', [
 Route::put('grade{grade}', [
     'uses' => 'GradesController@update',
     'as' => 'grades.update'
+]);
+Route::get('editPass{id}', [
+    'uses' => 'StudentsController@passEdit',
+    'as' => 'student.passEdit'
+]);
+Route::put('passUp{id}', [
+   'uses' => 'StudentsController@passUpdate',
+   'as' => 'student.passUp'
 ]);
 Route::put('student{student}', [
     'uses' => 'StudentsController@update',

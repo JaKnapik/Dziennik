@@ -13,7 +13,7 @@
                 @endif
                 @if(Auth::guest()==false)
                     @if(Auth::user()->role == 'user')
-                        <li><a href="#" class="button primary">Pokaż oceny</a></li>
+                        <li><a href="{{route('grades.showUser',[Auth::User()->id])}}" class="button primary">Pokaż oceny</a></li>
                     @endif
                     @if(Auth::user()->role == 'admin')
                         <li><a href="{{route('students.index')}}" class="button primary">Pokaż listę uczniów</a></li>
