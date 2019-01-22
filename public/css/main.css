@@ -4067,3 +4067,18 @@ input, select, textarea {
 .modal-5 a.active:hover:after {
 	display: none;
 }
+
+.column {
+	margin-top: 1%;
+	float: left;
+	width: 50%;
+	align-items: center;
+	text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}

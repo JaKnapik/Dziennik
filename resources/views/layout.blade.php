@@ -33,20 +33,25 @@
 													<li><a href="{{route('students.index')}}">LISTA UCZNIÓW</a></li>
 												@endif
 											@endif
-											<li><a href="elements.html">Elements</a></li>
-											<li>@if(Auth::guest()==false)
-												<a href="{{ route('login.logout') }}"
+
+											@if(Auth::guest()==false)
+													<li><a href="{{route("messages.showSent", Auth::user()->id)}}">Wiadomości wysłane</a></li>
+													<li><a href="{{route("messages.showReceived", Auth::user()->id)}}">Wiadomości odebrane</a></li>
+													<li><a href="{{route("messages.toMany")}}">Wyślij do wielu</a></li>
+                                                    <li><a href="{{route("paski.index")}}">Paski do druku</a></li>
+												<li><a href="{{ route('login.logout') }}"
 												   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-													Logout
+													Wyloguj
 												</a>
 
 												<form id="logout-form" action="{{ route('login.logout') }}" method="POST" style="display: none;">
 													{{ csrf_field() }}
 												</form>
+												</li>
 												@endif
 												@if(Auth::guest()==true)
-													<a href="{{ url('/login') }}">Zaloguj</a>
+													<li><a href="{{ url('/login') }}">Zaloguj</a></li>
 												@endif
 											</li>
 										</ul>
@@ -85,5 +90,8 @@
 			<script src="js/util.js"></script>
 			<script src="js/main.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
+			<script src="js/lista2.js"></script>
+
+
 	</body>
 </html>

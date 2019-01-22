@@ -33,6 +33,7 @@ class StudentsController extends Controller
         return view('students.register', compact('sections'));
     }
 
+
     /**
      * Store a newly created resource in storage.
      *

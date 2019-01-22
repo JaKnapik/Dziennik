@@ -1,5 +1,7 @@
 <?php
+
 use Illuminate\Database\Seeder;
+
 class UserSeeder extends Seeder
 {
     /**
@@ -19,35 +21,16 @@ class UserSeeder extends Seeder
 //            'role' => 'admin',
 //            'temp' => 0,
 //        ]);
-//        DB::table('users')->insert([
-//            'name' => 'Patryk',
-//            //'email' => 'maciejkna470@gmail.com',
-//            'password' => bcrypt('admin'),
-//            'surname' => 'Gucik',
-//            'pesel' => '97030708413',
-//            'editorID' => 1,
-//            'role' => 'admin',
-//            'temp' => 0,
-//        ]);
-//        DB::table('users')->insert([
-//            'name' => 'Jakub',
-//            //'email' => 'maciejkna470@gmail.com',
-//            'password' => bcrypt('admin'),
-//            'surname' => 'Knapik',
-//            'pesel' => '97102504697',
-//            'editorID' => 1,
-//            'role' => 'admin',
-//            'temp' => 0,
-//        ]);
+
         DB::table('users')->insert([
-            'name' => 'Jakub',
+            'name' => 'Sławosz2',
             //'email' => 'maciejkna470@gmail.com',
             'password' => bcrypt('user'),
-            'surname' => 'Szermierz',
-            'pesel' => '97102504699',
+            'surname' => 'Gała2',
+            'pesel' => '99999999998',
             'editorID' => 1,
             'role' => 'user',
             'temp' => 0,
-            ]);
+        ]);
     }
 }
