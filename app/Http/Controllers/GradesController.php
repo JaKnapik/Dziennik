@@ -22,9 +22,9 @@ class GradesController extends Controller
     }
     public function index($nameSurname)
     {
-        $nameSurname = Grades::join('users', 'users.id', '=', 'grades.studentID')
-            ->select('users.name', 'users.surname', 'grades.studentID')->where('grades.studentID', $nameSurname)->get();
-    return view('grades.gradesStore', compact('nameSurname'));
+        $nameSurname2 = User::select('name', 'surname', 'id')->where('id', $nameSurname)->get();
+        $nameSurname2 = $nameSurname2[0];
+        return view('grades.gradesStore', compact('nameSurname2'));
     }
 //
 //    /**
@@ -65,7 +65,8 @@ class GradesController extends Controller
     {
         $grades = Grades::join('users', 'users.id', '=', 'grades.studentID')
             ->select('grades.*')->where('users.id', $id)->paginate(1);
-        return view('grades.gradesList', compact('grades'));
+        $iducznia = $id;
+        return view('grades.gradesList', compact('grades'), compact('iducznia'));
     }
 //
     /**

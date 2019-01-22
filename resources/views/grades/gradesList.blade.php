@@ -16,7 +16,8 @@
             <th>Edytowane dnia:</th>
         </tr>
     </thead>
-    <tbody>
+<tbody>
+
     @foreach($grades as $grade)
         <tr>
             <th>{{$grade->grade}}</th>
@@ -28,10 +29,10 @@
             <td><a class="button" href="{{route('grades.edit', $grade->gradeID)}}">Edytuj</a></td>
             <td><a class="button" href="{{route('grades.destroy', $grade->gradeID)}}" onclick="return confirm('Czy jesteś pewien?')">Usuń</a></td>
         </tr>
-        @endforeach
+     @endforeach
     </tbody>
     <a class="button" href="{{route('students.index')}}">Lista uczniów</a>
-        <a class="button" href="{{route('grades.index', $grade->studentID)}}">Dodaj ocenę</a>
+        <a class="button" href="{{route('grades.index', $iducznia)}}">Dodaj ocenę</a>
 </table>
 </div>
 

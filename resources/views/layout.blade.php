@@ -9,7 +9,6 @@
 		<title>Spectral by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="css/bootstrap.css" />
 		<link rel="stylesheet" href="css/main.css" />
 		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
 	</head>
@@ -24,7 +23,7 @@
 						<nav id="nav">
 							<ul>
 								<li class="special">
-									<a href="#menu" class="menuToggle"><span>@if(Auth::guest()==false){{ Auth::user()->name." ".Auth::user()->surname }}@endif Menu</span></a>
+									<a href="#menu" class="menuToggle"><span>@if(Auth::guest()==false){{ Auth::user()->name." ".Auth::user()->surname }}@endif  Menu</span></a>
 									<div id="menu">
 										<ul>
 											@if(Auth::guest()==false)
@@ -48,7 +47,6 @@
 												<form id="logout-form" action="{{ route('login.logout') }}" method="POST" style="display: none;">
 													{{ csrf_field() }}
 												</form>
-												</li>
 												@endif
 												@if(Auth::guest()==true)
 													<li><a href="{{ url('/login') }}">Zaloguj</a></li>

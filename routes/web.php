@@ -96,10 +96,9 @@ Route::post('gradesStore', [
    'as' => 'grades.store'
 ]);
 Route::get('logout', [
-   'uses' => 'LoginController@logout',
+   'uses' => '\App\Http\Controllers\Auth\LoginController@logout',
    'as' => 'login.logout'
 ]);
-
 Route::get('createStudent', [
     'uses' => 'StudentsController@create',
     'as' => 'student.create'
