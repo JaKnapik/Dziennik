@@ -3976,6 +3976,167 @@ input, select, textarea {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+.pagination {
+	display: inline-block;
+	padding-left: 0;
+	margin: 20px 0;
+	border-radius: 4px;
+}
+.pagination > li {
+	display: inline;
+}
+.pagination > li > a,
+.pagination > li > span {
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #ddd;
+	text-decoration: none;
+	background-color: rgba(29, 36, 42, 0.9);
+	border: 1px solid #fff;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+	z-index: 2;
+	color: #ddd;
+	background-color: rgba(29, 36, 42, 0.9);
+	border-color: #ddd;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+	margin-left: 0;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+	z-index: 3;
+	color: #fff;
+	cursor: default;
+	background-color: rgba(144, 144, 144, 0.25);
+	border-color: #fff;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+	color: #777777;
+	cursor: not-allowed;
+	background-color: rgba(29, 36, 42, 0.9);
+	border-color: #fff;
+}
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+	padding: 10px 16px;
+	font-size: 18px;
+	line-height: 1.3333333;
+}
+.pagination-lg > li:first-child > a,
+.pagination-lg > li:first-child > span {
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+.pagination-lg > li:last-child > a,
+.pagination-lg > li:last-child > span {
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+	padding: 5px 10px;
+	font-size: 12px;
+	line-height: 1.5;
+}
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child > span {
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+.modal-5 {
+	position: relative;
+}
+.modal-5:after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 35px;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+	background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 40%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0) 100%);
+	background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 40%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0) 100%);
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 40%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0) 100%);
+}
+.modal-5 a {
+	color: #666;
+	padding: 13px 5px 5px;
+	margin: 0 10px;
+	position: relative;
+}
+.modal-5 a:hover {
+	color: #fff;
+}
+.modal-5 a:hover:after {
+	content: '';
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	background: #1E7EE2;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	z-index: -1;
+	left: -3px;
+	bottom: 4px;
+	margin: auto;
+}
+.modal-5 a.next, .modal-5 a.prev {
+	color: #1E7EE2;
+}
+.modal-5 a.next:hover, .modal-5 a.prev:hover {
+	color: #fff;
+}
+.modal-5 a.next:hover:after, .modal-5 a.prev:hover:after {
+	display: none;
+}
+.modal-5 a.active {
+	background: #1E7EE2;
+	color: #fff;
+}
+.modal-5 a.active:before {
+	content: '';
+	position: absolute;
+	top: -11px;
+	left: -10px;
+	width: 18px;
+	border: 10px solid transparent;
+	border-bottom: 7px solid #104477;
+	z-index: -1;
+}
+.modal-5 a.active:hover:after {
+	display: none;
+}
+
 .column {
 	margin-top: 1%;
 	float: left;

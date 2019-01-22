@@ -24,6 +24,7 @@
             <th>{{$student->class}}</th>
             <th>{{$student->sectionName}}</th>
             <td>
+                <a class="button" href="{{ route('grades.show', $student) }}">Oceny</a>
                 <a class="button" href="{{ route('student.edit', $student) }}">Edytuj</a>
                 <a class="button" href="{{route('student.destroy', $student)}}" onclick="return confirm('Are you sure?')">Usuń</a>
                 <a class="button" href="{{route('messages.create', $student)}}">Wiadomość</a>

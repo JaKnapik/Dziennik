@@ -23,7 +23,7 @@
 						<nav id="nav">
 							<ul>
 								<li class="special">
-									<a href="#menu" class="menuToggle"><span>@if(Auth::guest()==false){{ Auth::user()->name." ".Auth::user()->surname }}@endif Menu</span></a>
+									<a href="#menu" class="menuToggle"><span>@if(Auth::guest()==false){{ Auth::user()->name." ".Auth::user()->surname }}@endif  Menu</span></a>
 									<div id="menu">
 										<ul>
 											@if(Auth::guest()==false)
@@ -35,8 +35,10 @@
 
 											@if(Auth::guest()==false)
 													<li><a href="{{route("messages.showSent", Auth::user()->id)}}">Wiadomości wysłane</a></li>
+
 													<li><a href="{{route("messages.showReceived", Auth::user()->id)}}">Wiadomości odebrane</a></li>
 													<li><a href="{{route("messages.toMany")}}">Wyślij do wielu</a></li>
+													<li><a href="{{route("student.passEdit", Auth::user()->id)}}">Zmień hasło</a></li>
                                                     <li><a href="{{route("paski.index")}}">Paski do druku</a></li>
 												<li><a href="{{ route('login.logout') }}"
 												   onclick="event.preventDefault();
@@ -47,11 +49,11 @@
 												<form id="logout-form" action="{{ route('login.logout') }}" method="POST" style="display: none;">
 													{{ csrf_field() }}
 												</form>
-												</li>
 												@endif
 												@if(Auth::guest()==true)
 													<li><a href="{{ url('/login') }}">Zaloguj</a></li>
 												@endif
+											</li>
 										</ul>
 									</div>
 								</li>
@@ -87,6 +89,7 @@
 			<script src="js/breakpoints.min.js"></script>
 			<script src="js/util.js"></script>
 			<script src="js/main.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
 			<script src="js/lista2.js"></script>
 
 
