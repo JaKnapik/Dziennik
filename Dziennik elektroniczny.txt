@@ -1,0 +1,29 @@
+Dziennik elektroniczny
+Jakub Knapik
+Maciej Knapik
+Patryk Gucik
+
+Aplikacja stworzona korzystaj¹c z:
+1) PHP z wykorzystaniem frameworka Laravel 5.3
+2) XAMPP - serwer Apache, baza danych MySQL
+
+Opis:
+Do korzystania ze strony wymagane jest zalogowanie
+Strona dzieli siê na panel administratora, nauczyciela oraz ucznia.
+Ca³a funkcjonalnoœæ obs³ugiwana jest z panelu bocznego,
+U¿ytkownikowi przedstawiane s¹ b³êdy pope³niane w formularzach,
+Rejestracja ucznia dokonywana jedynie z panelu nauczyciela, podczas której generowane jest mu has³o, które póŸniej mo¿e zmieniæ,
+Nauczyciela dodaje siê z poziomu administratora.
+Funkcjonalnoœæ:
+
+1) Uczniowie:
+	a) Dodawanie
+	b) Edycja
+	c) Usuwanie
+2) Wysy³anie wiadomoœci miêdzy uczniem a nauczycielem(mo¿liwoœæ wys³ania wiadomoœci do wielu uczniów),
+3) Oceny:
+	a) Dodawanie
+	b) Edycja
+	c) Usuwanie
+4) Przegl¹danie ocen z poziomu widoku ucznia,
+5) Zarz¹dzanie kadr¹ nauczycielsk¹ oraz klasami.
